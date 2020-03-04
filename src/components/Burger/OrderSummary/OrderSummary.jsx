@@ -14,6 +14,9 @@ const orderSumm = props => {
             <h3>Your Order</h3>
             <p>A Burger with the following ingredients:</p>
             <ul>{listItem}</ul>
+            <p>
+                <strong>Total Price:{props.price.toFixed(2)}</strong>
+            </p>
             <Button btnType="Danger" click={props.cancel}>
                 CANCEL
             </Button>
