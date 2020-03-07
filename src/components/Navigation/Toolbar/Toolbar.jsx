@@ -7,7 +7,7 @@ const toolbar = props => {
     return (
         <header className={styles.Toolbar}>
             <div>MENU</div>
-            <Logo />
+            <Logo height="80%" />
             <nav className={styles.nav}>
                 <NavigationItems />
             </nav>
