@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./Burger.module.css";
+
+import classes from "./Burger.module.css";
 import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 
 const burger = props => {
@@ -9,12 +10,14 @@ const burger = props => {
                 return <BurgerIngredient key={igKey + i} type={igKey} />;
             });
         })
-        .reduce((arr, el) => arr.concat(el), []);
+        .reduce((arr, el) => {
+            return arr.concat(el);
+        }, []);
     if (transformedIngredients.length === 0) {
-        transformedIngredients = <div>Please Add ingredients</div>;
+        transformedIngredients = <p>Please start adding ingredients!</p>;
     }
     return (
-        <div className={styles.Burger}>
+        <div className={classes.Burger}>
             <BurgerIngredient type="bread-top" />
             {transformedIngredients}
             <BurgerIngredient type="bread-bottom" />
